@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Peminjaman</title>
+</head>
+<body>
+
+<h2>Form Peminjaman</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    Nama: <input type="text" name="nama"><br>
+    NIM: <input type="text" name="nim"><br>
+
+    Barang:
+    <select name="barang">
+        <option>Laptop</option>
+        <option>Kamera</option>
+    </select><br><br>
+
+    Foto Barang:
+    <input type="file" name="foto"><br><br>
+
+    <button type="submit">Pinjam</button>
+</form>
+
+<h2>Data</h2>
+
+<ul>
+{% for item in data %}
+    <li>{{ item[1] }} - {{ item[3] }} ({{ item[5] }})</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
